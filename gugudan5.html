@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>multiplication table</title>
+</head>
+<body>
+<h1>구구단을 입력 받아 출력하기</h1>
+<!-- 구구단 꾸며보기 -->
+몇 단을 출력 하실껀가요? : <input type="text" id="dan">
+<button onclick="runGugudan()">확인</button>
+
+<script>
+    function runGugudan() {
+        var n = Number(document.getElementById("dan").value);
+        var result;
+        document.write("<h2>"+ n + " 단</h2>");
+        for (var i = 1; i <=9; i++) {
+            result = n * i;
+            document.write(n + " * " + i + " = " + result + "<br>");
+        }  
+    }
+    
+</script>
+</body>
+</html>
