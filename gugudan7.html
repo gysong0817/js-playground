@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>multiplication table</title>
+</head>
+<body>
+<h1>2 ~ 9단만 입력받아 출력하기</h1>
+출력 받고 싶은 단 : <input type="text" id="dan">
+<button onclick="gugudan()">확인</button>
+<script>
+    function gugudan() {
+        var n = Number(document.getElementById("dan").value);
+        var result;
+        if (n < 2 || n > 9) {
+            alert("2 이상 9 이하의 숫자를 입력해주세요!!");
+        } else {
+            document.write("<h2>" + n + " 단</h2>");
+            for (var i = 1; i < 10; i++) {
+                result = n * i;
+                document.write(n + " * " + i + " = " + result + "<br>");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
