@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-10000 Prime</title>
+</head>
+<body>
+    <h1>1~10000 사이의 소수 출력하기</h1>
+    <script>
+        numbers = {};
+        numbers.all = [];
+        numbers.Prime = [];
+
+        numbers.addAll = function(max_num) {
+            for (var i = 1; i < max_num; i++) {
+                this.all.push(i);
+            }
+            return;
+        }
+
+        numbers.isPrime = function(number) {
+            for (var i = 2; i < number; i++){
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        numbers.addPrime = function(number) {
+            this.Prime.push(number);
+        }
+
+        numbers.getAllPrime = function() {
+            this.addAll(10);
+            for (var i = 0 ; i < this.all.length; i++) {
+                var b = this.isPrime(this.all[i]);
+                console.log(this.all[i], b);
+                if (b) {
+                    this.addPrime(this.all[i]);
+                }
+            }
+
+            console.log(this.all);
+            console.log(this.Prime);
+        }
+
+        numbers.getAllPrime();
+    </script>
+</body>
+</html>
