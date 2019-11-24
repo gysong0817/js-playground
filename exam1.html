@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-10000 Prime</title>
+</head>
+<body>
+    <h1>1~10000 사이의 짝수 출력하기</h1>
+    <script>
+        numbers = {};
+        numbers.all = [];
+        numbers.even = [];
+
+        numbers.addAll = function(max_num) {
+            for (var i = 1; i < max_num; i++) {
+                this.all.push(i);
+            }
+        }
+
+        numbers.isEven = function(number) {
+            if (number % 2 === 0) {
+                return true
+            }
+            return false
+        }
+
+        numbers.addEven = function(number) {
+            this.even.push(number);
+        }
+
+        numbers.getAllEven = function() {
+            this.addAll(10);
+            for (var i = 0 ; i < this.all.length; i++) {
+                var b = this.isEven(this.all[i]);
+                console.log(this.all[i], b);
+                if (b) {
+                    this.addEven(this.all[i]);
+                }
+            }
+
+            console.log(this.all);
+            console.log(this.even);
+        }
+
+        numbers.getAllEven();
+    </script>
+</body>
+</html>
